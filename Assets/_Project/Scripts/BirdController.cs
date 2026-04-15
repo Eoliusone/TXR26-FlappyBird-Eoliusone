@@ -1,18 +1,39 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BirdController : MonoBehaviour
 {
-    private Transform monTransform;
+    private Rigidbody2D _rigidbody2D;
+    public float jumpForce = 0;
+    private Camera _camera;
+    [HideInInspector] public GameManager m_manager;
 
+    [SerializeField]private bool isDead;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        monTransform = GetComponent<Transform>();
+        _camera = Camera.main;
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+        if (_rigidbody2D == null) Debug.LogError("BirdController: No Rigidbody2D found!");
     }
 
     // Update is called once per frame
     void Update()
     {
-        monTransform.position += new Vector3(0.01f,0, 0);
+        HandleInput();
+        
+        if (!(Mathf.Abs(transform.position.y) > _camera.orthographicSize)) return;
+        
+        m_manager.GameOver();
+        enabled = false;
+
+    }
+
+    private void HandleInput()
+    {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            _rigidbody2D.AddForceY(jumpForce, ForceMode2D.Impulse);
+        }
     }
 }
