@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3d0e54b4b0b6b44b974e9c45fee9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MyFirstScript
-  jumpForce: 8
+  jumpForce: 4
   m_manager: {fileID: 0}
   isDead: 0
 --- !u!50 &4399773342554046552

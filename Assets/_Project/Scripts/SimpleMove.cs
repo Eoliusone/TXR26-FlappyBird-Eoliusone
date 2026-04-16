@@ -13,6 +13,6 @@ public class SimpleMove : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.left * (_unitsPerSecond * Time.deltaTime));
-        if(transform.position.x < -15) gameObject.SetActive(false);
+        if(transform.position.x < -30) gameObject.SetActive(false);
     }
 }

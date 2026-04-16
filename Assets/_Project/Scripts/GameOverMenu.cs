@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,6 +20,7 @@ public class GameOverMenu : MonoBehaviour
     private void QuitGame()
     {
         Debug.Log("Quit Game");
+        Application.Quit();
     }
 
     private void OnRetryGameButtonClick()
