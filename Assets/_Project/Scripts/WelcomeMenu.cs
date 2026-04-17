@@ -13,6 +13,8 @@ public class WelcomeMenu : MonoBehaviour
     [SerializeField] private Button _quitWelcomeButton;
     
     public GameManager gameManager;
+    public PlayersPrefs playerPrefs;
+    public SpawnPipeManager _spawnPipeManager;
 
     private void Start()
     {
@@ -25,11 +27,12 @@ public class WelcomeMenu : MonoBehaviour
         Debug.Log("Quit Welcome Button");
         QuitWelcomeMenu();
         gameManager.CreatePlayer();
+        _spawnPipeManager.StartPawnPipe();
     }
 
     private void OnPlayerNameButtonClick()
     {
-        PlayerPrefs.SetString("Username", "Guest");
+        playerPrefs.LoadSettings();
         QuitWelcomeMenu();
     }
 

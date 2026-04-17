@@ -12,6 +12,7 @@ namespace _Project.Scripts
         public TMP_Text scoreText;
         public TMP_Text highscoreText;
         public List<int> highScoresList = new List<int>();
+        public int highScore => highScoresList[0];
         
         [HideInInspector] public BirdController birdcontroller;
 
@@ -24,9 +25,15 @@ namespace _Project.Scripts
         {
             Debug.Log("The list is empty. No maximum value can be found.");
         }
-        
-            int maxValue = highScoresList.Max();
-            highscoreText.text = $"Highest number (LINQ):{maxValue}";
+        int maxManual = highScoresList[0];
+        foreach (int num in highScoresList)
+        {
+            if (num > maxManual)
+                maxManual = num;
+        }
+        highscoreText.text = $"Score : {maxManual}";
+            //int maxValue = highScoresList.Max();
+            //highscoreText.text = $"Highest number (LINQ):{maxValue}";
         }
     
     
@@ -51,6 +58,7 @@ namespace _Project.Scripts
         public void ShowStartMenu()
         {
             welcomeMenu.SetActive(true);
+            DisplayHighScore(highScore);
         }
     }
 }

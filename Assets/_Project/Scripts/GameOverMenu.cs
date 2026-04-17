@@ -20,6 +20,7 @@ public class GameOverMenu : MonoBehaviour
     private void QuitGame()
     {
         Debug.Log("Quit Game");
+        gameObject.SetActive(false);
         Application.Quit();
     }
 

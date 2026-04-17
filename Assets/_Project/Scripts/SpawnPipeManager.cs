@@ -8,7 +8,7 @@ public class SpawnPipeManager : MonoBehaviour
     private PipePool _pipePool;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void StartPawnPipe()
     {
         _pipePool = GetComponent<PipePool>();
         
