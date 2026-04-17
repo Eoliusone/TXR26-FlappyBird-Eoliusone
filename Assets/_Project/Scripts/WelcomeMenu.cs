@@ -12,7 +12,7 @@ public class WelcomeMenu : MonoBehaviour
     [SerializeField] private Button _playerNameButton;
     [SerializeField] private Button _quitWelcomeButton;
     
-    [HideInInspector] public GameManager gameManager;
+    public GameManager gameManager;
 
     private void Start()
     {
@@ -35,7 +35,7 @@ public class WelcomeMenu : MonoBehaviour
 
     private void QuitWelcomeMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    gameObject.SetActive(false);
     }
 }
 
