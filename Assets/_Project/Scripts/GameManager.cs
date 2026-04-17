@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [Header("Player References"), Space(10)] 
-    [SerializeField, Tooltip("The player object you must instantiate at start.")] private GameObject _playerPrefab;
+    [SerializeField,Tooltip("The player object you must instantiate at start.")] private GameObject _playerPrefab;
     [SerializeField,Tooltip("The position of the player at start.")] private Transform _playerSpawnPosition;
     private GameObject _bird;
     
@@ -24,7 +24,16 @@ public class GameManager : MonoBehaviour
     
     private STATE _state = STATE.Playing;
     
+    
     void Start()
+    {
+        Debug.Log("Start Game");
+        //Invoke(nameof(CreatePlayer),5);
+        _uiManager.ShowStartMenu();
+
+    }
+
+    public void CreatePlayer()
     {
         _bird = Instantiate(_playerPrefab, _playerSpawnPosition.position, Quaternion.identity);
         _bird.GetComponent<BirdController>().m_manager =this;
@@ -33,6 +42,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         _uiManager.DisplayGameOverMenu();
+        _uiManager.DisplayScore(_score);
     }
 
     public void AddPoint()
