@@ -1,19 +1,28 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class UiManager : MonoBehaviour
+namespace _Project.Scripts
 {
-    [SerializeField] private GameObject _gameOverMenu;
-    public TMP_Text scoreText;
-
-    public void DisplayGameOverMenu()
+    public class UiManager : MonoBehaviour
     {
-        _gameOverMenu.SetActive(true);
-    }
+        [SerializeField] private GameObject _gameOverMenu;
+        public TMP_Text scoreText;
 
-    public void DisplayScore(int score)
-    {
-        Debug.Log("Score: " + score);
-        scoreText.text = "Score : " + score;
+        private void Start()
+        {
+           // scoreText = GetComponent<TMP_Text>();
+        }
+
+        public void DisplayGameOverMenu()
+        {
+            _gameOverMenu.SetActive(true);
+        }
+
+        public void DisplayScore(int score)
+        {
+            Debug.Log("Score: " + score);
+            scoreText.text = $"Score : {score}";
+        }
+        
     }
 }
