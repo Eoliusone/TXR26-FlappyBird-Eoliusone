@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2519468139707645544}
   - component: {fileID: 4643938400665779110}
   m_Layer: 0
-  m_Name: Bird
+  m_Name: Bird 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 68305769957194485}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.49, y: 0.5, z: 0}
+  m_LocalPosition: {x: -0.31, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 2888876069629017657, guid: c3c9e6830d5db8044b5cf05abca94287, type: 3}
+  m_Sprite: {fileID: -5277560816237430456, guid: 5bbd6a8497b28dc4aa38f5e9be3bb1cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_manager: {fileID: 0}
   UiManager: {fileID: 0}
   isDead: 0
-  isPlayerOne: 1
+  isPlayerOne: 0
 --- !u!50 &4399773342554046552
 Rigidbody2D:
   serializedVersion: 5

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 namespace _Project.Scripts
 {
@@ -11,7 +12,8 @@ namespace _Project.Scripts
         [HideInInspector] public GameManager m_manager;
         [HideInInspector] public UiManager UiManager;
         [SerializeField]private bool isDead;
-
+        [SerializeField]private bool isPlayerOne;
+   
         void Start()
         {
             Debug.Log("Coucou");
@@ -36,8 +38,13 @@ namespace _Project.Scripts
         {
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
-                _rigidbody2D.AddForceY(jumpForce, ForceMode2D.Impulse);
+                if(isPlayerOne) _rigidbody2D.AddForceY(jumpForce, ForceMode2D.Impulse);
             }
+            if (Keyboard.current.downArrowKey.wasPressedThisFrame)
+            {
+                if(isPlayerOne==false) _rigidbody2D.AddForceY(jumpForce, ForceMode2D.Impulse);
+            }
+            
         }
 
         private void OnCollisionEnter2D(Collision2D other)
